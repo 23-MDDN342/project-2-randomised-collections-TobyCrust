@@ -77,8 +77,39 @@ function draw () {
           simplePurpleFace();
         }
         else {
-          thinness_value = random(0, 100);
-          blockyFace(thinness_value);
+          let eyeSizeing = random(1.5, 3.5);
+          let X1 = random(0, -10);
+          let X2 = random(-6, -8);
+          let X3 = random(-4, -6);
+          let Y3 = random(-4, -6);
+          let TP = random(-5, -10);
+          let Beak = random(-2, 2);
+
+          push();
+          let GullColor = random(180, 100);
+          let SpinnerValue = random(0, 100);
+          let beakColor = 215;
+          
+          if (SpinnerValue > 90){
+          GullColor = 10
+          
+          }
+          else if (SpinnerValue < 5){
+            beakColor = 30
+          }
+          else {
+            GullColor = random(200, 100);
+            beakColor = 215
+          }
+
+            
+            
+          
+          pop();
+
+          
+          
+          MyFace(eyeSizeing, X1, X3, Y3, X2, TP, Beak, GullColor, beakColor);
         }
         pop();
       }
