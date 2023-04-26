@@ -94,7 +94,7 @@ function draw () {
           GullColor = 10
           
           }
-          else if (SpinnerValue < 5){
+          else if (SpinnerValue < 15){
             beakColor = 30
           }
           else {

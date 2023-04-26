@@ -86,7 +86,8 @@ endShape();
   translate((-X2/2-X3/2)+Beak+2, -0.4 );
   arc(0, 0, 5, 2, 50, 150);
   pop();
-
+  // arc(0, TP, 5, 1, 0, 360);//halo
+  arc(0, TP, 1, 2, 90, 270);
 
 
   // let w = 4; // Width of the canvas divided by 10
