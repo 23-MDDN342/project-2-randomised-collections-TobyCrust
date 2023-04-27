@@ -22,24 +22,18 @@ function MyFace(eyeSizeing, X1, X3, Y3, X2, TP, Beak, GullColor, beakColor){
   
   angleMode(DEGREES);
 
-  let x1= -1;
+  
   let y1 = 7;
 
-  let x2 = -5;
+  
   let y2 = 5;
 
-  let x3 = -4;
-  let y3 = -5;
-
-  let x4 = 4;
-  let y4 = -5;
-
-  let x5 = 5;
   let y5 = 5;
 
-  let x6 = 1;
   let y6 = 7;
 
+  
+strokeWeight(0.1);
 point(X1, y1);
 point(X2, y2);
 point(X3, Y3);
@@ -83,11 +77,15 @@ endShape();
  
   noFill();
   push();
+  if (Beak < -0.5){
+    noStroke();
+  }
   translate((-X2/2-X3/2)+Beak+2, -0.4 );
   arc(0, 0, 5, 2, 50, 150);
+  
   pop();
   // arc(0, TP, 5, 1, 0, 360);//halo
-  arc(0, TP, 1, 2, 90, 270);
+  // arc(0, TP, 1, 2, 90, 270);
 
 
   // let w = 4; // Width of the canvas divided by 10

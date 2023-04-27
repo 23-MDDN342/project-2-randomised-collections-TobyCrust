@@ -42,39 +42,25 @@ function draw () {
 
   // clear screen
   background(bg_color1);
-  noStroke();
+  
 
   // draw a 7x4 grid of faces
   let w = canvasWidth / 7;
+  let flip = canvasWidth / 7;
   let h = canvasHeight / 4;
-  for(let i=0; i<4; i++) {
-    for(let j=0; j<7; j++) {
+  for(let i=0; i<12; i++) {
+    for(let j=0; j<21; j++) {
       let y = h/2 + h*i;
       let x = w/2 + w*j;
-      if (i == 0) {
-        // center face
-        let eye_value = 2;
-        let tilt_value = random(-45, 45);
-        let mouth_value = random(1, 3);
-        let is_cyclops = random(0, 100);
-        if(is_cyclops < 10) {
-          eye_value = 1;
-          tilt_value = random(-5, 5);
-          mouth_value = random(5, 10);
-        }
-        push();
-        translate(x, y);
-        scale(w/25, h/25);
-        orangeAlienFace(tilt_value, eye_value, mouth_value);
-        pop();
-      }
-      else if (i > 0) {
+     
+      if (i >= 0) {
         // all other faces
+        
         push();
         translate(x, y);
-        scale(w/25, h/25);
-        if((i+j)%2 == 0) {
-          simplePurpleFace();
+        scale(flip/17, h/15);
+        if((i+j)%100 == -1) {
+          
         }
         else {
           let eyeSizeing = random(1.5, 3.5);
@@ -85,27 +71,36 @@ function draw () {
           let TP = random(-5, -10);
           let Beak = random(-2, 2);
 
-          push();
+          
           let GullColor = random(180, 100);
           let SpinnerValue = random(0, 100);
+          let FlipValue = random(0, 100);
           let beakColor = 215;
           
+         
           if (SpinnerValue > 90){
           GullColor = 10
-          
+          flip = -17*8
           }
+         
           else if (SpinnerValue < 15){
             beakColor = 30
+            
           }
           else {
             GullColor = random(200, 100);
             beakColor = 215
+            flip = 17*8
           }
 
+           
+          if (FlipValue > 50){
+           
             
-            
-          
-          pop();
+
+            }
+         
+         
 
           
           
