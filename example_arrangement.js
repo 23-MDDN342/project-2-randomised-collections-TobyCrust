@@ -25,8 +25,8 @@ function changeRandomSeed() {
   lastSwapTime = millis();
 }
 
-// global variables for colors
-const bg_color1 = [71, 222, 219]
+// global variables for colors // backgorund
+const bg_color1 = [71, 122, 139]
 
 function mouseClicked() {
   changeRandomSeed();
@@ -45,11 +45,12 @@ function draw () {
   
 
   // draw a 7x4 grid of faces
-  let w = canvasWidth / 7;
   let flip = canvasWidth / 7;
+  let w = canvasWidth / 7;
   let h = canvasHeight / 4;
-  for(let i=0; i<12; i++) {
-    for(let j=0; j<21; j++) {
+  let xShift = random(-2, 2);
+  for(let i=0; i<4; i++) { // rows 
+    for(let j=0; j<7; j++) { // collums
       let y = h/2 + h*i;
       let x = w/2 + w*j;
      
@@ -76,6 +77,7 @@ function draw () {
           let SpinnerValue = random(0, 100);
           let FlipValue = random(0, 100);
           let beakColor = 215;
+         
           
          
           if (SpinnerValue > 90){
