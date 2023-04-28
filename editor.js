@@ -46,7 +46,8 @@ function setup () {
   faceSelector.option('1');
   faceSelector.option('2');
   faceSelector.option('3');
-  faceSelector.value('1');
+  faceSelector.option('4');
+  faceSelector.value('4');
   faceSelector.parent('selector1Container');
 }
 
@@ -98,6 +99,20 @@ function draw () {
   if (mode == '3') {
     simplePurpleFace();
   }
+
+  if (mode == '4') {
+    let eyeSizeing = (map(s5, 0, 100, 1.5, 3.5));
+    let X1 = (map(s9, 0, 100, 0, -10));
+    let X2 = (map(s8, 0, 100, -6, -8));
+    let X3 = (map(s6, 0, 100, -4, -6));
+    let Y3 = (map(s7, 0, 100, -4, -6));
+    let TP = (map(s10, 0, 100, -5, -10));
+    let Beak = (map(s1, 0, 100, -2, 2));
+    let GullColor = (map(s2, 0, 255, 200, 0));
+    
+    MyFace(eyeSizeing, X1, X3, Y3, X2, TP, Beak, GullColor);
+    
+     }
 
   pop();
 
