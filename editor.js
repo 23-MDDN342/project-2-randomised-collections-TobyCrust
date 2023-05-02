@@ -7,10 +7,11 @@ const canvasHeight = 500;
 const bg_color = [71, 222, 219];
 let slider1, slider2, slider3, slider4, slider5;
 let slider6, slider7, slider8, slider9, slider10;
+let slider11, slider12, slider13, slider14;
 let faceSelector;
 let faceGuideCheckbox;
 
-function setup () {
+function setup() {
 
   // create the drawing canvas, save the canvas element
   let main_canvas = createCanvas(canvasWidth, canvasHeight);
@@ -27,6 +28,10 @@ function setup () {
   slider8 = createSlider(0, 100, 50);
   slider9 = createSlider(0, 100, 50);
   slider10 = createSlider(0, 100, 50);
+  slider11 = createSlider(0, 100, 50);
+  slider12 = createSlider(0, 100, 50);
+  slider13 = createSlider(0, 100, 50);
+  slider14 = createSlider(0, 100, 50);
 
   slider1.parent('slider1Container');
   slider2.parent('slider2Container');
@@ -38,6 +43,11 @@ function setup () {
   slider8.parent('slider8Container');
   slider9.parent('slider9Container');
   slider10.parent('slider10Container');
+  slider11.parent('slider11Container');
+  slider12.parent('slider12Container');
+  slider13.parent('slider13Container');
+  slider14.parent('slider14Container');
+
 
   faceGuideCheckbox = createCheckbox('', false);
   faceGuideCheckbox.parent('checkbox1Container');
@@ -53,7 +63,7 @@ function setup () {
 
 
 
-function draw () {
+function draw() {
   strokeWeight(0.2);
 
   let mode = faceSelector.value();
@@ -70,6 +80,10 @@ function draw () {
   let s8 = slider8.value();
   let s9 = slider9.value();
   let s10 = slider10.value();
+  let s11 = slider11.value();
+  let s12 = slider12.value();
+  let s13 = slider13.value();
+  let s14 = slider14.value();
 
   let show_face_guide = faceGuideCheckbox.checked();
 
@@ -85,16 +99,16 @@ function draw () {
 
   push();
   if (mode == '1') {
-   // draw face using values mapped from 3 sliders
-   let tilt_value = map(s1, 0, 100, -90, 90);
-   let mouth_value = map(s2, 0, 100, 0.5, 10);
-   let eye_value = int(map(s3, 0, 100, 1, 3));
-   orangeAlienFace(tilt_value, eye_value, mouth_value);
+    // draw face using values mapped from 3 sliders
+    let tilt_value = map(s1, 0, 100, -90, 90);
+    let mouth_value = map(s2, 0, 100, 0.5, 10);
+    let eye_value = int(map(s3, 0, 100, 1, 3));
+    orangeAlienFace(tilt_value, eye_value, mouth_value);
   }
 
   if (mode == '2') {
-     // let slider value 1 indicate thinness
-     blockyFace(s1);
+    // let slider value 1 indicate thinness
+    blockyFace(s1);
   }
   if (mode == '3') {
     simplePurpleFace();
@@ -108,24 +122,30 @@ function draw () {
     let Y3 = (map(s7, 0, 100, -4, -6));
     let TP = (map(s10, 0, 100, -5, -10));
     let Beak = (map(s1, 0, 100, -2, 2));
-    let GullColor = (map(s2, 0, 255, 200, 0));
-    
-    MyFace(eyeSizeing, X1, X3, Y3, X2, TP, Beak, GullColor);
-    
-     }
+    let GullColor = (map(s2, 0, 255, 250, 0));
+    let EyeM = (map(s3, 0, 100, 0, 5));
+    let EyeColor = (int(map(s4, 0, 100, 155, 255)));
+    let Bags = int(map(s11, 0, 100, -1, 2));
+    let BeakC = int(map(s12, 0, 100, 0, 255)); // beak colour
+    let Brows = int(map(s13, 0, 100, 180, 250));
+    let EyeMove = (map(s14, 0, 100, 0, 0.2));
+
+    MyFace(eyeSizeing, X1, X3, Y3, X2, TP, Beak, GullColor, EyeM, EyeColor, Bags, BeakC, Brows, EyeMove);
+
+  }
 
   pop();
 
-  if(show_face_guide) {
+  if (show_face_guide) {
     strokeWeight(0.1);
-    rectMode(CORNER); 
+    rectMode(CORNER);
     noFill()
     stroke(0, 0, 255);
     rect(-10, -10, 20, 20);
-    line(  0, -11,  0, -10);
-    line(  0,  10,  0, 11);
-    line(-11,   0,-10,  0);
-    line( 11,   0, 10,  0);
+    line(0, -11, 0, -10);
+    line(0, 10, 0, 11);
+    line(-11, 0, -10, 0);
+    line(11, 0, 10, 0);
   }
 
   pop();
