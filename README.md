@@ -6,4 +6,10 @@
 >This starter code is just some simple faces being drawn. 
 
 
+<<<<<<< Updated upstream
 Think I'm going to make the seguls that are on that boat in wellingotn. they all start from a base model but have lots of interesting unique variation which I would like to create. 
+=======
+seagulls
+
+Paramerterised seagulls that are constantly randomized to produce new an interesting characters. 
+>>>>>>> Stashed changes

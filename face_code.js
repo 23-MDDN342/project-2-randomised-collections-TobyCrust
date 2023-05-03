@@ -15,8 +15,12 @@
  */
 
 
+<<<<<<< Updated upstream
 
 function MyFace(eyeSizeing, X1, X3, Y3, X2, TP, Beak, GullColor, beakColor){
+=======
+function MyFace(eyeSizeing, X1, X3, Y3, X2, TP, Beak, GullColor, EyeM, EyeColor, Bags, BeakC, Brows, chip, Hairs, eyeMo, EyeMove, Pupils) {
+>>>>>>> Stashed changes
   angleMode(RADIANS);
 
   
@@ -31,6 +35,63 @@ function MyFace(eyeSizeing, X1, X3, Y3, X2, TP, Beak, GullColor, beakColor){
   let y5 = 5;
 
   let y6 = 7;
+<<<<<<< Updated upstream
+=======
+  
+
+  //----------------------------------------------body draw-------------------------
+  strokeWeight(0);
+  point(X1, y1);
+  point(X2, y2);
+  point(X3, Y3);
+  point(0, TP); // top point
+  point(-X3, Y3);
+  point(-X2, y5);
+  point(-X1, y6);
+  strokeWeight(0.1);
+
+  fill(GullColor);
+  beginShape()
+  curveVertex(X1, y1);
+  curveVertex(X2, y2);
+
+  curveVertex(X3, Y3);
+  curveVertex(0, TP); // top point
+  curveVertex(-X3, Y3);
+  curveVertex(-X2, y5);
+  curveVertex(-X1, y6);
+  endShape();
+  //-------------------------------------------body end---------------------------------
+
+
+  let yellowEye = 155
+ 
+  if (EyeColor <= 240) {
+    yellowEye = 255;
+  }
+
+  let xc = constrain(mouseX, 1.7, 2.3);
+  let xs = constrain(mouseY, 1.7, 2.3);
+  
+
+  fill(255, 255, yellowEye); //eye color
+  ellipse(-X3 + 1, -3, eyeSizeing, eyeSizeing); // Right eye
+  fill(0);
+  ellipse(-X3 + 1.5 + chip*2, -3, 0.5, 0.5); // eye pupil
+
+  noFill();
+  strokeWeight(Bags / 10);
+  if (Bags > 1) { // bags needs to be able to get to above 1! 
+    strokeWeight(0);
+  }
+  arc(-X3 + eyeMo, -2.5 + eyeSizeing / 2, 3, 2, 50, Brows - 100 - BeakC / 10); // eye bags
+  strokeWeight(0.1 + Bags / 10);
+  if (Bags > 1) {
+    strokeWeight(0);
+  }
+  arc(-X3+ eyeMo, -1 - eyeSizeing / 2 + eyeMo*0.05, 3, 3, Brows / 0.9, Brows + 100 - BeakC / 6); // left eyebrow
+  arc(-X3 + 1, -2 - eyeSizeing / 2, 3, 3, Brows / 0.9, Brows + 100 - BeakC / 6); // right eyebrow
+>>>>>>> Stashed changes
 
   
 strokeWeight(0.1);
@@ -57,6 +118,35 @@ curveVertex(-X1, y6);
 endShape();
 
 
+<<<<<<< Updated upstream
+=======
+  ellipse(-X3 + eyeMo, -2 + eyeMo*0.2, eyeSizeing, eyeSizeing); // left eye
+  fill(0);
+  ellipse(-X3 + 0.5 + chip + eyeMo, -2 + eyeMo*0.2, 0.5, 0.5); // eye pupil
+
+  noFill();
+  push();
+  if (Beak < -0.5) {
+    noStroke();
+  }
+  translate((-X2 / 2 - X3 / 2) + Beak + 2, -0.4);
+  arc(0, 0, 5, 2, 50, 150); // mouth smile :)
+
+  pop();
+  
+  strokeWeight(Hairs);
+  arc(-1.5, TP, 3, 3, 330, 0);
+  arc(-1.5, TP, 3, 1.7, 330, 0); //hairs
+ 
+
+
+
+  strokeWeight(0)
+  fill(255,255,0,0) // turnning it off and on by effecting the stoke weight and transparency
+  translate(-X3,0);
+  rotate(25);
+  rect(3.2,-2,0.6,2,0.1,0.1) //chip
+>>>>>>> Stashed changes
 
   let centerX = 0;
   let distactBetweenEyes = 5
@@ -64,6 +154,7 @@ endShape();
   let eyesizer = 2;
   
   fill(255);
+<<<<<<< Updated upstream
   ellipse(-X3+1,-3,eyeSizeing,eyeSizeing);
   fill(0);
   ellipse(-X3+1.5,-3,0.5,0.5);
@@ -113,6 +204,14 @@ endShape();
   // bezierVertex(w+o - r, -2, w+o, -2, w+o, r);
   
   // endShape(CLOSE);
+=======
+  
+  console.log(EyeMove);
+
+  //----------------------------------------------------waves-----------------------------------
+
+
+>>>>>>> Stashed changes
 }
 
 
