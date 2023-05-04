@@ -43,28 +43,6 @@ function draw() {
   background(bg_color1);
 
 
-  // beginShape();
-
-  // // loop through x values from 0 to the width of the canvas
-  // for (let x = 0; x <= width - 600; x += 5) {
-  //   // calculate the y value of the sine wave using the current x value and a time-based offset
-  //   let y = height / 2 + sin(x / 20 * PI + t) * height / 2;
-
-  //   // add some noise to the y value based on the current x and a time-based offset
-  //   y += noise(x / 200, t) * height / 2;
-
-  //   // flip the y value so the wave is right-side-up
-
-
-  //   // add a curve vertex at the current x and y values
-  //   curveVertex(x, y);
-  // }
-
-  // // end the curve
-  // endShape();
-
-  // // update the time offset
-  // t += 0.01;
 
   let howManyAccross = 8;
   let howManyDown = 5;
@@ -74,15 +52,13 @@ function draw() {
   let w = canvasWidth / howManyAccross;
   let h = canvasHeight / howManyDown;
 
-  let xShift = random(-2, 2);
+  
   for (let i = 0; i < howManyDown; i++) { // rows 
     for (let j = 0; j < howManyAccross; j++) { // collums
       let offsetAmmount = 40
 
-      let YOffset = random(-offsetAmmount-20, offsetAmmount)
-      let XOffset = random(-offsetAmmount+20, offsetAmmount-20)
-      // let y = h/2 + h+YOffset*i ; // this is a version where all the gulls are smushed together. Maybe an effect could be built from this? 
-      // let x = w/2 + w+XOffset*j ;
+      let YOffset = random(-offsetAmmount, offsetAmmount) // change how high up on each other they can come
+      let XOffset = random(-offsetAmmount+15, offsetAmmount-15) // cahnges how far they shift left and right
 
       let y = h / 2 + h * i - YOffset;// this version is very much still on the grid, with added random. Could be better if the grid was more crowded? 
       let x = w / 2 + w * j - XOffset;
@@ -154,6 +130,42 @@ function draw() {
         }
 
         MyFace(eyeSizeing, X1, X3, Y3, X2, TP, Beak, GullColor, EyeM, EyeColor, Bags, BeakC, Brows, chip, Hairs, eyeMo, EyeMove);
+
+        push()
+  beginShape(); 
+  fill(40,50,200,50);
+  stroke(40,50,300,50);
+  // loop through x values from 0 to the width of the canvas
+  for (let x = 0; x <= width; x += 5) {
+    // calculate the y value of the sine wave using the current x value and a time-based offset
+    let y = height/4 + sin(x/20*PI + t);
+    
+    // add some noise to the y value based on the current x and a time-based offset
+    y += noise(x/900, t) * height/2;
+    
+    // flip the y value so the wave is right-side-up
+    
+    
+    // add a curve vertex at the current x and y values
+    curveVertex(x, y);
+    curveVertex(0, 0);
+    
+    curveVertex(0, 400);
+    
+    curveVertex(1200, 400);
+    curveVertex(1200, 0);
+
+  }
+  
+  // end the curve
+  endShape();
+  
+  // update the time offset
+  t += 0.01;
+pop();
+
+
+
       }
       pop();
       ellipse(mouseX, mouseY, 10, 10);
