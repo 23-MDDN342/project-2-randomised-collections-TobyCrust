@@ -1,21 +1,14 @@
-/*
- * This editor shows the possible faces that can be created
- */
-
 const canvasWidth = 960;
 const canvasHeight = 500;
 const bg_color = [71, 222, 219];
 let slider1, slider2, slider3, slider4, slider5;
 let slider6, slider7, slider8, slider9, slider10;
-// <<<<<<< Updated upstream
-// =======
 let slider11, slider12, slider13, slider14, slider15, slider16;
 let slider17;
-// >>>>>>> Stashed changes
 let faceSelector;
 let faceGuideCheckbox;
 
-function setup () {
+function setup() {
 
   // create the drawing canvas, save the canvas element
   let main_canvas = createCanvas(canvasWidth, canvasHeight);
@@ -32,8 +25,6 @@ function setup () {
   slider8 = createSlider(0, 100, 50);
   slider9 = createSlider(0, 100, 50);
   slider10 = createSlider(0, 100, 50);
-// <<<<<<< Updated upstream
-// =======
   slider11 = createSlider(0, 100, 50);
   slider12 = createSlider(0, 100, 50);
   slider13 = createSlider(0, 100, 50);
@@ -41,7 +32,6 @@ function setup () {
   slider15 = createSlider(0, 100, 50);
   slider16 = createSlider(0, 100, 50);
   slider17 = createSlider(0, 100, 50);
-// >>>>>>> Stashed changes
 
   slider1.parent('slider1Container');
   slider2.parent('slider2Container');
@@ -53,8 +43,6 @@ function setup () {
   slider8.parent('slider8Container');
   slider9.parent('slider9Container');
   slider10.parent('slider10Container');
-// <<<<<<< Updated upstream
-// =======
   slider11.parent('slider11Container');
   slider12.parent('slider12Container');
   slider13.parent('slider13Container');
@@ -63,7 +51,6 @@ function setup () {
   slider16.parent('slider16Container');
   slider17.parent('slider17Container');
 
-// >>>>>>> Stashed changes
 
   faceGuideCheckbox = createCheckbox('', false);
   faceGuideCheckbox.parent('checkbox1Container');
@@ -77,9 +64,7 @@ function setup () {
   faceSelector.parent('selector1Container');
 }
 
-
-
-function draw () {
+function draw() {
   strokeWeight(0.2);
 
   let mode = faceSelector.value();
@@ -96,8 +81,6 @@ function draw () {
   let s8 = slider8.value();
   let s9 = slider9.value();
   let s10 = slider10.value();
-// <<<<<<< Updated upstream
-// =======
   let s11 = slider11.value();
   let s12 = slider12.value();
   let s13 = slider13.value();
@@ -105,7 +88,7 @@ function draw () {
   let s15 = slider15.value();
   let s16 = slider16.value();
   let s17 = slider17.value();
-// >>>>>>> Stashed changes
+ 
 
   let show_face_guide = faceGuideCheckbox.checked();
 
@@ -121,38 +104,23 @@ function draw () {
 
   push();
   if (mode == '1') {
-   // draw face using values mapped from 3 sliders
-   let tilt_value = map(s1, 0, 100, -90, 90);
-   let mouth_value = map(s2, 0, 100, 0.5, 10);
-   let eye_value = int(map(s3, 0, 100, 1, 3));
-   orangeAlienFace(tilt_value, eye_value, mouth_value);
-  }
-
-  if (mode == '2') {
-     // let slider value 1 indicate thinness
-     blockyFace(s1);
-  }
-  if (mode == '3') {
-    simplePurpleFace();
+    // draw face using values mapped from 3 sliders
+    let tilt_value = map(s1, 0, 100, -90, 90);
+    let mouth_value = map(s2, 0, 100, 0.5, 10);
+    let eye_value = int(map(s3, 0, 100, 1, 3));
+    orangeAlienFace(tilt_value, eye_value, mouth_value);
   }
 
   if (mode == '4') {
     let eyeSizeing = (map(s5, 0, 100, 1.5, 3.5));
-    let X1 = (map(s9, 0, 100, 0, -10));
+    let X1 = (map(s9, 0, 100, 0, -10)); // body param start
     let X2 = (map(s8, 0, 100, -6, -8));
     let X3 = (map(s6, 0, 100, -4, -6));
     let Y3 = (map(s7, 0, 100, -4, -6));
-    let TP = (map(s10, 0, 100, -5, -10));
+    let TP = (map(s10, 0, 100, -5, -10)); // body param end
     let Beak = (map(s1, 0, 100, -2, 2));
-// <<<<<<< Updated upstream
-//     let GullColor = (map(s2, 0, 255, 200, 0));
-    
-//     MyFace(eyeSizeing, X1, X3, Y3, X2, TP, Beak, GullColor);
-    
-//      }
-// =======
     let GullColor = (map(s2, 0, 255, 250, 0));
-    let eye_value = (int(map(s3, 0, 100, 1, 3)));
+    let eye_value = (int(map(s3, 0, 100, 1, 3))); // make three eyes
     let EyeColor = (int(map(s4, 0, 100, 155, 255)));
     let Bags = int(map(s11, 0, 100, -1, 2));
     let BeakC = int(map(s12, 0, 100, 0, 255)); // beak colour
@@ -165,20 +133,19 @@ function draw () {
     MyFace(eyeSizeing, X1, X3, Y3, X2, TP, Beak, GullColor, eye_value, EyeColor, Bags, BeakC, Brows, EyeMove, Tuft, eyeMo, chip);
 
   }
-// >>>>>>> Stashed changes
 
   pop();
 
-  if(show_face_guide) {
+  if (show_face_guide) {
     strokeWeight(0.1);
-    rectMode(CORNER); 
+    rectMode(CORNER);
     noFill()
     stroke(0, 0, 255);
     rect(-10, -10, 20, 20);
-    line(  0, -11,  0, -10);
-    line(  0,  10,  0, 11);
-    line(-11,   0,-10,  0);
-    line( 11,   0, 10,  0);
+    line(0, -11, 0, -10);
+    line(0, 10, 0, 11);
+    line(-11, 0, -10, 0);
+    line(11, 0, 10, 0);
   }
 
   pop();
@@ -192,4 +159,3 @@ function keyTyped() {
     saveBlocksImages(true);
   }
 }
-//latests

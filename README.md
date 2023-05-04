@@ -6,10 +6,26 @@
 >This starter code is just some simple faces being drawn. 
 
 
-<<<<<<< Updated upstream
-Think I'm going to make the seguls that are on that boat in wellingotn. they all start from a base model but have lots of interesting unique variation which I would like to create. 
-=======
-seagulls
+"Seagulls of Wellington"
 
-Paramerterised seagulls that are constantly randomized to produce new an interesting characters. 
->>>>>>> Stashed changes
+
+This code creates paramerterised seagulls that are constantly randomized to produce new an interesting characters. Different types off random are used to create different rarity in the randomness. Some traits in the seagulls are more common. You can ajust the sliders in the editor to see what each of the variables do. In the arrangement they are all put together on a randomly offset grid where all of there different traits are shown off. 
+
+The design for this code was inpired by artist DSIDE who graffitied a mored WW2 era tug boat in wellington that has since been sunk. 
+
+
+Summary of parameters:
+Body(Width, height and roundness)
+Beak lenght
+seagull colour
+beak colour
+eye colour
+eye size
+eyebrow size
+different types of eyebrows
+eyebrow rotation
+Pupil location
+hair
+eye location
+
+Everything about the seagull has been parameterised. This is so that there are no parts of the seagull that will look the same across the design. When the same shape is picked up by the eye you will instantly form a pattern and will link all the seagulls together. Because everything is parameterised the seagulls feel more natural and organic.

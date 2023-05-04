@@ -1,36 +1,14 @@
-/*
- * This file should contain code that draws your faces.
- *
- * Each function takes parameters and draws a face that is within
- * the bounding box (-10, -10) to (10, 10).
- *
- * These functions are used by your final arrangement of faces as well as the face editor.
- */
-
-
-/*
- * tilt_value is in degrees
- * eye_value is an integer number of eyes: either 0, 1, 2, or 3
- * mouth_value is how open the mouth is and should generally range from 0.5 to 10
- */
-
-
-function MyFace(eyeSizeing, X1, X3, Y3, X2, TP, Beak, GullColor, EyeM, EyeColor, Bags, BeakC, Brows, chip, Hairs, eyeMo, EyeMove, Pupils) {
-  angleMode(RADIANS);
-
+function MyFace(eyeSizeing, X1, X3, Y3, X2, TP, Beak, GullColor, EyeM, EyeColor, Bags, BeakC, Brows, chip, Hairs, eyeMo, EyeMove) {
 
   angleMode(DEGREES);
 
-
   let y1 = 7;
-
 
   let y2 = 5;
 
   let y5 = 5;
 
   let y6 = 7;
-  
 
   //----------------------------------------------body draw-------------------------
   strokeWeight(0);
@@ -58,76 +36,67 @@ function MyFace(eyeSizeing, X1, X3, Y3, X2, TP, Beak, GullColor, EyeM, EyeColor,
 
 
   let yellowEye = 155
- 
-  if (EyeColor <= 240) {
+
+  if (EyeColor <= 240) { // changes the eye colour
     yellowEye = 255;
   }
 
-  let xc = constrain(mouseX, 1.7, 2.3);
-  let xs = constrain(mouseY, 1.7, 2.3);
-  
+
 
   fill(255, 255, yellowEye); //eye color
   ellipse(-X3 + 1, -3, eyeSizeing, eyeSizeing); // Right eye
   fill(0);
-  ellipse(-X3 + 1.5 + chip*2, -3, 0.5, 0.5); // eye pupil
+  ellipse(-X3 + 1.5 + chip * 2, -3, 0.5, 0.5); // eye pupil
 
   noFill();
   strokeWeight(Bags / 10);
-  if (Bags > 1) { // bags needs to be able to get to above 1! 
+  if (Bags > 1) { // bags needs to be able to get to above 1
     strokeWeight(0);
   }
   arc(-X3 + eyeMo, -2.5 + eyeSizeing / 2, 3, 2, 50, Brows - 100 - BeakC / 10); // eye bags
   strokeWeight(0.1 + Bags / 10);
-  if (Bags > 1) {
+  if (Bags > 1) { 
     strokeWeight(0);
   }
-  arc(-X3+ eyeMo, -1 - eyeSizeing / 2 + eyeMo*0.2, 3, 3, Brows / 0.9, Brows + 100 - BeakC / 6); // left eyebrow
+
+  arc(-X3 + eyeMo, -1 - eyeSizeing / 2 + eyeMo * 0.2, 3, 3, Brows / 0.9, Brows + 100 - BeakC / 6); // left eyebrow
   arc(-X3 + 1, -2 - eyeSizeing / 2, 3, 3, Brows / 0.9, Brows + 100 - BeakC / 6); // right eyebrow
 
-  
   strokeWeight(0.1);
   fill(BeakC, Bags * 200, 0);
-  strokeJoin(ROUND);
+  strokeJoin(ROUND); // makes the beak round
   triangle((-X2 - X3) / 2, -0.3, (-X2 / 2 - X3 / 2) + Beak + 3, 0.5, (-X2 - X3) / 2, 1.3); // seagull beak
   fill(255, 255, yellowEye);
 
 
-  ellipse(-X3 + eyeMo, -2 + eyeMo*0.2, eyeSizeing, eyeSizeing); // left eye
+  ellipse(-X3 + eyeMo, -2 + eyeMo * 0.2, eyeSizeing, eyeSizeing); // left eye
   fill(0);
-  ellipse(-X3 + 0.5 + chip + eyeMo, -2 + eyeMo*0.2, 0.5, 0.5); // eye pupil
+  ellipse(-X3 + 0.5 + chip + eyeMo, -2 + eyeMo * 0.2, 0.5, 0.5); // eye pupil
 
   noFill();
   push();
-  if (Beak < -0.5) {
+  if (Beak < -0.5) { // cutts off the smile if the beak is too small
     noStroke();
   }
   translate((-X2 / 2 - X3 / 2) + Beak + 2, -0.4);
   arc(0, 0, 5, 2, 50, 150); // mouth smile :)
 
   pop();
-  
+
   strokeWeight(Hairs);
   arc(-1.5, TP, 3, 3, 330, 0);
   arc(-1.5, TP, 3, 1.7, 330, 0); //hairs
- 
-
 
 
   strokeWeight(0)
-  fill(255,255,0,0) // turnning it off and on by effecting the stoke weight and transparency
-  translate(-X3,0);
+  fill(255, 255, 0, 0) // turnning it off and on by effecting the stoke weight and transparency
+  translate(-X3, 0);
   rotate(25);
-  rect(3.2,-2,0.6,2,0.1,0.1) //chip
+  rect(3.2, -2, 0.6, 2, 0.1, 0.1) //chip
 
   
-  fill(255);
-  
-  console.log(EyeMove);
-
   //----------------------------------------------------waves-----------------------------------
 
-//latest
 }
 
 
@@ -170,31 +139,3 @@ function orangeAlienFace(tilt_value, eye_value, mouth_value) {
   ellipse(centerX, Iy + MouthDrop, distactBetweenEyes, mouth_value);
 }
 
-
-function simplePurpleFace() {
-  fill(234, 122, 244);
-  noStroke();
-  // head
-  ellipse(0, 0, 20);
-  // eyes
-  fill(255, 217, 114);
-  ellipse(-3, -3, 3);
-  ellipse(3, -3, 3);
-}
-
-/*
- * thinness_value ranges from 0-100 and indicates how thin the face is
- */
-function blockyFace(thinness_value) {
-  // head
-  noStroke();
-  fill(134, 19, 136);
-  let head_width = map(thinness_value, 0, 100, 8, 20);
-  rect(-head_width / 2, -9, head_width, 18);
-
-
-  // eyes
-  fill(234, 122, 244);
-  ellipse(-2, -4, 1);
-  ellipse(2, -4, 1);
-}
