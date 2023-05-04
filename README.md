@@ -29,3 +29,5 @@ hair
 eye location
 
 Everything about the seagull has been parameterised. This is so that there are no parts of the seagull that will look the same across the design. When the same shape is picked up by the eye you will instantly form a pattern and will link all the seagulls together. Because everything is parameterised the seagulls feel more natural and organic.
+
+Link to github pages: https://23-mddn342.github.io/project-2-randomised-collections-TobyCrust/ 

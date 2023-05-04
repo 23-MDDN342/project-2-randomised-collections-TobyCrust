@@ -94,7 +94,6 @@ function MyFace(eyeSizeing, X1, X3, Y3, X2, TP, Beak, GullColor, EyeM, EyeColor,
   rotate(25);
   rect(3.2, -2, 0.6, 2, 0.1, 0.1) //chip
 
-  
   //----------------------------------------------------waves-----------------------------------
 
 }
