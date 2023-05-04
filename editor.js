@@ -7,11 +7,11 @@ const canvasHeight = 500;
 const bg_color = [71, 222, 219];
 let slider1, slider2, slider3, slider4, slider5;
 let slider6, slider7, slider8, slider9, slider10;
-<<<<<<< Updated upstream
-=======
+// <<<<<<< Updated upstream
+// =======
 let slider11, slider12, slider13, slider14, slider15, slider16;
 let slider17;
->>>>>>> Stashed changes
+// >>>>>>> Stashed changes
 let faceSelector;
 let faceGuideCheckbox;
 
@@ -32,8 +32,8 @@ function setup () {
   slider8 = createSlider(0, 100, 50);
   slider9 = createSlider(0, 100, 50);
   slider10 = createSlider(0, 100, 50);
-<<<<<<< Updated upstream
-=======
+// <<<<<<< Updated upstream
+// =======
   slider11 = createSlider(0, 100, 50);
   slider12 = createSlider(0, 100, 50);
   slider13 = createSlider(0, 100, 50);
@@ -41,7 +41,7 @@ function setup () {
   slider15 = createSlider(0, 100, 50);
   slider16 = createSlider(0, 100, 50);
   slider17 = createSlider(0, 100, 50);
->>>>>>> Stashed changes
+// >>>>>>> Stashed changes
 
   slider1.parent('slider1Container');
   slider2.parent('slider2Container');
@@ -53,8 +53,8 @@ function setup () {
   slider8.parent('slider8Container');
   slider9.parent('slider9Container');
   slider10.parent('slider10Container');
-<<<<<<< Updated upstream
-=======
+// <<<<<<< Updated upstream
+// =======
   slider11.parent('slider11Container');
   slider12.parent('slider12Container');
   slider13.parent('slider13Container');
@@ -63,7 +63,7 @@ function setup () {
   slider16.parent('slider16Container');
   slider17.parent('slider17Container');
 
->>>>>>> Stashed changes
+// >>>>>>> Stashed changes
 
   faceGuideCheckbox = createCheckbox('', false);
   faceGuideCheckbox.parent('checkbox1Container');
@@ -96,8 +96,8 @@ function draw () {
   let s8 = slider8.value();
   let s9 = slider9.value();
   let s10 = slider10.value();
-<<<<<<< Updated upstream
-=======
+// <<<<<<< Updated upstream
+// =======
   let s11 = slider11.value();
   let s12 = slider12.value();
   let s13 = slider13.value();
@@ -105,7 +105,7 @@ function draw () {
   let s15 = slider15.value();
   let s16 = slider16.value();
   let s17 = slider17.value();
->>>>>>> Stashed changes
+// >>>>>>> Stashed changes
 
   let show_face_guide = faceGuideCheckbox.checked();
 
@@ -144,13 +144,13 @@ function draw () {
     let Y3 = (map(s7, 0, 100, -4, -6));
     let TP = (map(s10, 0, 100, -5, -10));
     let Beak = (map(s1, 0, 100, -2, 2));
-<<<<<<< Updated upstream
-    let GullColor = (map(s2, 0, 255, 200, 0));
+// <<<<<<< Updated upstream
+//     let GullColor = (map(s2, 0, 255, 200, 0));
     
-    MyFace(eyeSizeing, X1, X3, Y3, X2, TP, Beak, GullColor);
+//     MyFace(eyeSizeing, X1, X3, Y3, X2, TP, Beak, GullColor);
     
-     }
-=======
+//      }
+// =======
     let GullColor = (map(s2, 0, 255, 250, 0));
     let eye_value = (int(map(s3, 0, 100, 1, 3)));
     let EyeColor = (int(map(s4, 0, 100, 155, 255)));
@@ -165,7 +165,7 @@ function draw () {
     MyFace(eyeSizeing, X1, X3, Y3, X2, TP, Beak, GullColor, eye_value, EyeColor, Bags, BeakC, Brows, EyeMove, Tuft, eyeMo, chip);
 
   }
->>>>>>> Stashed changes
+// >>>>>>> Stashed changes
 
   pop();
 
