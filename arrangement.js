@@ -7,7 +7,7 @@ const canvasHeight = 500;
 let curRandomSeed = 0;
 
 let lastSwapTime = 0;
-const millisPerSwap = 3000;
+const millisPerSwap = 30;
 
 // global variables for colors
 const bg_color1 = [71, 222, 219];
